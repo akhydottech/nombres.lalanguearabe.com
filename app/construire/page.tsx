@@ -181,9 +181,9 @@ export default function ConstruirePage() {
                         {selectedDizaine && selectedUnite && (
                           <AudioSequencePlayer
                             audioSources={[
-                              dizaines.find((n) => n.value.toString() === selectedDizaine)?.audio || "",
-                              conjunctions.wa.audio,
                               unites.find((n) => n.value.toString() === selectedUnite)?.audio || "",
+                              conjunctions.wa.audio,
+                              dizaines.find((n) => n.value.toString() === selectedDizaine)?.audio || "",
                             ]}
                           />
                         )}
@@ -194,8 +194,9 @@ export default function ConstruirePage() {
                     <p className="text-sm text-muted-foreground">
                       En arabe, {composedNumber} se dit{" "}
                       <span className="font-medium">
-                        {dizaines.find((n) => n.value.toString() === selectedDizaine)?.arabic} {conjunctions.wa.arabic}{" "}
                         {unites.find((n) => n.value.toString() === selectedUnite)?.arabic}
+                          {conjunctions.wa.arabic}{" "}
+                        {dizaines.find((n) => n.value.toString() === selectedDizaine)?.arabic}
                       </span>
                     </p>
                   </div>
