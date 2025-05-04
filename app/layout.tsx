@@ -5,6 +5,7 @@ import "./globals.css"
 
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
+import { GitHubLogoIcon } from "@radix-ui/react-icons"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -24,6 +25,19 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <main className="min-h-screen bg-background">{children}</main>
+          <footer className="border-t py-4 w-full">
+            <div className="container flex justify-center">
+              <a 
+                href="https://github.com/akhydottech/nombres.lalanguearabe.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <GitHubLogoIcon className="h-4 w-4" />
+                <span>GitHub</span>
+              </a>
+            </div>
+          </footer>
           <Toaster />
         </ThemeProvider>
       </body>
